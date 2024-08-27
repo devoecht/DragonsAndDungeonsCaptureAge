@@ -19,6 +19,6 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 
     void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
     {
-        myButton().Content(box_value(L"Clicked"));
+       //yButton().Content(box_value(L"Clicked"));
     }
 }

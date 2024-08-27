@@ -1,0 +1,10 @@
+namespace DragonsAndDungeonsCaptureAge
+{
+    [bindable]
+    [default_interface]
+    runtimeclass CharactherViewModel 
+    {
+        CharactherViewModel();
+        Int32 MyProperty;
+    }
+}

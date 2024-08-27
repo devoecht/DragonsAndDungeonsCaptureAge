@@ -107,6 +107,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CharachterSelectionPanelControl.h">
+      <DependentUpon>CharachterSelectionPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="CharacterInformationPanelControl.h">
+      <DependentUpon>CharacterInformationPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="CharacterPreviewPanel.h">
+      <DependentUpon>CharacterPreviewPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectButtonControl.h">
+      <DependentUpon>CharacterSelectButtonControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="CharacterStatControl.h">
+      <DependentUpon>CharacterStatControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="CharactherViewModel.h">
+      <DependentUpon>CharactherViewModel.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -119,6 +143,21 @@
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CharachterSelectionPanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharacterInformationPanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharacterPreviewPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharacterSelectButtonControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharacterStatControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -138,6 +177,30 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CharachterSelectionPanelControl.cpp">
+      <DependentUpon>CharachterSelectionPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="CharacterInformationPanelControl.cpp">
+      <DependentUpon>CharacterInformationPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="CharacterPreviewPanel.cpp">
+      <DependentUpon>CharacterPreviewPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectButtonControl.cpp">
+      <DependentUpon>CharacterSelectButtonControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="CharacterStatControl.cpp">
+      <DependentUpon>CharacterStatControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="CharactherViewModel.cpp">
+      <DependentUpon>CharactherViewModel.idl</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -152,6 +215,29 @@
   <ItemGroup>
     <Midl Include="App.idl">
       <DependentUpon>App.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="CharachterSelectionPanelControl.idl">
+      <DependentUpon>CharachterSelectionPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CharacterInformationPanelControl.idl">
+      <DependentUpon>CharacterInformationPanelControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CharacterPreviewPanel.idl">
+      <DependentUpon>CharacterPreviewPanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CharacterSelectButtonControl.idl">
+      <DependentUpon>CharacterSelectButtonControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CharacterStatControl.idl">
+      <DependentUpon>CharacterStatControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CharactherViewModel.idl">
+      <SubType>Designer</SubType>
     </Midl>
     <Midl Include="MainPage.idl">
       <DependentUpon>MainPage.xaml</DependentUpon>

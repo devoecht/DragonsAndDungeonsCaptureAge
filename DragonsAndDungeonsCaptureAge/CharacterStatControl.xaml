@@ -1,0 +1,17 @@
+﻿<UserControl
+    x:Class="DragonsAndDungeonsCaptureAge.CharacterStatControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DragonsAndDungeonsCaptureAge"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Canvas Width="80" Height="80" Background="Darkgray" HorizontalAlignment="Left" Margin="20,40,0,0">
+            <Canvas Width="40" Height="40" Background="white" HorizontalAlignment="Left" Margin="20,60,0,0">
+                <TextBlock Text="0" FontSize="35" Foreground="Black" TextAlignment="Center" Width="40" Height="40"/>
+            </Canvas>
+        </Canvas>
+    </StackPanel>
+</UserControl>

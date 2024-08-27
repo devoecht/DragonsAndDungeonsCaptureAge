@@ -1,0 +1,9 @@
+namespace DragonsAndDungeonsCaptureAge
+{
+    [default_interface]
+    runtimeclass CharacterInformationPanelControl : Windows.UI.Xaml.Controls.UserControl
+    {
+        CharacterInformationPanelControl();
+        Int32 MyProperty;
+    }
+}

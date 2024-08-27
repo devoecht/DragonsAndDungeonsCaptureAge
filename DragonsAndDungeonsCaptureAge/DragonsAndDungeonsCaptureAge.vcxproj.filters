@@ -5,10 +5,16 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
+    <Page Include="CharachterSelectionPanelControl.xaml" />
+    <Page Include="CharacterSelectButtonControl.xaml" />
+    <Page Include="CharacterInformationPanelControl.xaml" />
+    <Page Include="CharacterStatControl.xaml" />
+    <Page Include="CharacterPreviewPanel.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
     <Midl Include="MainPage.idl" />
+    <Midl Include="CharactherViewModel.idl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
