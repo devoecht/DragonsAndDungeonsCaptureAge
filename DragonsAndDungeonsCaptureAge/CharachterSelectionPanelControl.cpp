@@ -29,7 +29,8 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
         for (uint16_t i = 0; i < parent.CharacterCount(); i++)
         {
             auto charachterEntity = make<DragonsAndDungeonsCaptureAge::implementation::CharactherViewModel>();
-            charachterEntity.CharacterName(L"Character");
+            std::wstring characterName = L"Character " + std::to_wstring(i);
+            charachterEntity.CharacterName(characterName);
             characterEntities.Append(charachterEntity);
         }
     }

@@ -9,14 +9,36 @@ using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
-    int32_t CharacterSelectButtonControl::MyProperty()
+    DragonsAndDungeonsCaptureAge::CharactherViewModel CharacterSelectButtonControl::CharacterEntry()
     {
-        throw hresult_not_implemented();
+        return m_characterEntry;
     }
 
-    void CharacterSelectButtonControl::MyProperty(int32_t /* value */)
+    void CharacterSelectButtonControl::CharacterEntry(DragonsAndDungeonsCaptureAge::CharactherViewModel const& value)
     {
-        throw hresult_not_implemented();
+        if (m_characterEntry != value)
+        {
+            m_characterEntry = value;
+
+            //Set information for button display
+            CharacterName(m_characterEntry.CharacterName());
+
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"CharacterEntry" });
+        }
+    }
+
+    winrt::hstring CharacterSelectButtonControl::CharacterName()
+    {
+        return m_characterName;
+    }
+
+    void CharacterSelectButtonControl::CharacterName(winrt::hstring const& value)
+    {
+        if (m_characterName != value)
+        {
+            m_characterName = value;
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"CharacterName" });
+        }
     }
 
     void CharacterSelectButtonControl::ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)

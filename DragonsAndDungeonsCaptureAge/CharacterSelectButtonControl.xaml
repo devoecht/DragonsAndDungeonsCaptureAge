@@ -10,7 +10,7 @@
     <Button x:Name="CharacterButton" Click="ClickHandler" Margin="10,30,0,0">
         <Canvas Width="650" Height="100" Background="DarkGray">
             <Canvas Width="80" Height="80" Margin="10,10,0,0" Background="LightGray" />
-                <TextBlock Text="CharacterName" FontSize="35" Canvas.Top="25" Foreground="LightGray" TextAlignment="Center" Width="500" Height="80"/>
+            <TextBlock Text="{Binding CharacterName, Mode=OneWay }" FontSize="35" Canvas.Top="25" Foreground="LightGray" TextAlignment="Center" Width="500" Height="80"/>
                 <Canvas Width="64" Height="64" Background="LightGray" HorizontalAlignment="Left" Margin="500,0,0,0"/>
                 <Canvas Width="64" Height="64" Background="LightGray" HorizontalAlignment="Left" Margin="580,0,0,0"/>
         </Canvas>

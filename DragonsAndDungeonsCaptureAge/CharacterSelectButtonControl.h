@@ -6,20 +6,35 @@
 #include "winrt/Windows.UI.Xaml.Controls.Primitives.h"
 #include "CharacterSelectButtonControl.g.h"
 
+#include "CharactherViewModel.g.h"
+
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
     struct CharacterSelectButtonControl : CharacterSelectButtonControlT<CharacterSelectButtonControl>
     {
-        CharacterSelectButtonControl() 
-        {
-            // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
+        CharacterSelectButtonControl(){}
+
+        event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value) {
+            return m_propertyChanged.add(value);
         }
 
-        int32_t MyProperty();
-        void MyProperty(int32_t value);
+        void PropertyChanged(event_token const& token) {
+            m_propertyChanged.remove(token);
+        }
+
+        DragonsAndDungeonsCaptureAge::CharactherViewModel CharacterEntry();
+        void CharacterEntry(DragonsAndDungeonsCaptureAge::CharactherViewModel const& value);
+
+        winrt::hstring CharacterName();
+        void CharacterName(winrt::hstring const& value);
 
         void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
+
+    private:
+        DragonsAndDungeonsCaptureAge::CharactherViewModel m_characterEntry{ nullptr };
+        winrt::hstring m_characterName = L"NotSet";
+
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 
