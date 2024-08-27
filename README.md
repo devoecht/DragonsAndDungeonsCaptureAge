@@ -8,3 +8,12 @@ I work with a visual studio project, runable from visual studio. It is important
 
 **How to use the program**
 The program will be runable from visual studio and will boot up the character select screen immediatly
+
+
+
+**Note after 4h**
+
+I didnt manage to finish this test my apologies. I wasn't familiar enough with C++/WinRT and thought I could do it in 4h with learning this framework more. 
+I will make a branch in this repository as I still want to continue working on this in my own time to figure out to make this completely working. 
+
+I would like to thank you for your time with the interviews and for giving me this oportunity.
