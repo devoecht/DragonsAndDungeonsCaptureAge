@@ -1,10 +1,58 @@
 namespace DragonsAndDungeonsCaptureAge
 {
+    enum CharacterRace
+        {
+            Dwarf = 0,
+            Elf = 1,
+            Gnome = 2,
+            Halfling = 3,
+            Human = 4,
+
+            Unknown = 5
+        };
+
+    enum CharacterClass
+        {
+            Bard = 0,
+            Cleric = 1, 
+            Druid = 2, 
+            Fighter = 3,
+            Ranger = 4,
+            Thief = 5,
+            Wizard = 6,
+
+            Unknown = 7
+        };
+
+    enum CharacterStatType
+            {
+                STR = 0, 
+                INT = 1,
+                WIS = 2,
+                DEX = 3,
+                CON = 4,
+                CHA = 5,
+
+                Unknown = 6
+            };
+
     [bindable]
     [default_interface]
     runtimeclass CharactherViewModel 
     {
         CharactherViewModel();
-        Int32 MyProperty;
+
+        //General Character Information
+        String CharacterName;
+        CharacterRace CharacterRaceID;
+        CharacterClass CharacterClassID;
+        CharacterStatType CharacterPrimeClassID;
+
+        Int16 CharacterSTRStatValue;
+        Int16 CharacterINTStatValue;
+        Int16 CharacterWISStatValue;
+        Int16 CharacterDEXStatValue;
+        Int16 CharacterCONStatValue;
+        Int16 CharacterCHAStatValue;
     }
 }
