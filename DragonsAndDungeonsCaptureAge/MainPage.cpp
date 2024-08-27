@@ -2,23 +2,19 @@
 #include "MainPage.h"
 #include "MainPage.g.cpp"
 
+#include "CharactherViewModel.h"
+
 using namespace winrt;
 using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
-    int32_t MainPage::MyProperty()
+    MainPage::MainPage()
     {
-        throw hresult_not_implemented();
+        m_characterEntities = single_threaded_observable_vector<DragonsAndDungeonsCaptureAge::CharactherViewModel>();
     }
-
-    void MainPage::MyProperty(int32_t /* value */)
+    void MainPage::ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        throw hresult_not_implemented();
-    }
-
-    void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
-    {
-       //yButton().Content(box_value(L"Clicked"));
+        //Do start stuff
     }
 }

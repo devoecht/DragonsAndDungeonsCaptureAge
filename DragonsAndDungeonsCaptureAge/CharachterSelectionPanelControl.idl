@@ -1,9 +1,17 @@
+import "CharactherViewModel.idl";
+
 namespace DragonsAndDungeonsCaptureAge
-{
+
+{   
+[bindable]
     [default_interface]
-    runtimeclass CharachterSelectionPanelControl : Windows.UI.Xaml.Controls.UserControl
+    runtimeclass CharachterSelectionPanelControl : Windows.UI.Xaml.Controls.UserControl, Windows.UI.Xaml.Data.INotifyPropertyChanged
     {
         CharachterSelectionPanelControl();
-        Int32 MyProperty;
+        
+        static Windows.UI.Xaml.DependencyProperty CharacterEntitiesProperty{ get; };
+        Windows.Foundation.Collections.IObservableVector<CharactherViewModel> CharacterEntities;
+
+        UInt32 CharacterCount;
     }
 }

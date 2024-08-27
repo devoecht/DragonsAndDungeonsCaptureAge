@@ -9,10 +9,13 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="800" Background="LightGray">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <!-- will need to be added dynamically later -->
-            <local:CharacterSelectButtonControl/>
-            <local:CharacterSelectButtonControl/>
-            <local:CharacterSelectButtonControl/>
+            <ItemsControl ItemsSource="{Binding CharacterEntities}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="local:CharactherViewModel">
+                        <local:CharacterSelectButtonControl/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
     </StackPanel>
 </UserControl>

@@ -18,7 +18,9 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
     {
         throw hresult_not_implemented();
     }
+
     void CharacterSelectButtonControl::ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
     {
+        
     }
 }

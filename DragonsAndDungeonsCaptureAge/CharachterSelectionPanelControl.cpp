@@ -4,18 +4,33 @@
 #include "CharachterSelectionPanelControl.g.cpp"
 #endif
 
+#include <CharactherViewModel.h>
+
 using namespace winrt;
 using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
-    int32_t CharachterSelectionPanelControl::MyProperty()
-    {
-        throw hresult_not_implemented();
-    }
+    Windows::UI::Xaml::DependencyProperty CharachterSelectionPanelControl::m_characterEntitiesProperty =
+        Windows::UI::Xaml::DependencyProperty::Register(
+            L"CharacterEntities",
+            winrt::xaml_typename<Windows::Foundation::Collections::IObservableVector<DragonsAndDungeonsCaptureAge::CharactherViewModel>>(),
+            winrt::xaml_typename<DragonsAndDungeonsCaptureAge::CharachterSelectionPanelControl>(),
+            Windows::UI::Xaml::PropertyMetadata(nullptr, Windows::UI::Xaml::PropertyChangedCallback(&CharachterSelectionPanelControl::OnCharacterEntitiesChanged))
+        );
 
-    void CharachterSelectionPanelControl::MyProperty(int32_t /* value */)
+
+    void CharachterSelectionPanelControl::OnCharacterEntitiesChanged(Windows::UI::Xaml::DependencyObject d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs e)
     {
-        throw hresult_not_implemented();
+        auto parent = d.as<DragonsAndDungeonsCaptureAge::CharachterSelectionPanelControl>();
+        auto characterEntities = parent.CharacterEntities();
+        assert(characterEntities != nullptr);
+
+        for (uint16_t i = 0; i < parent.CharacterCount(); i++)
+        {
+            auto charachterEntity = make<DragonsAndDungeonsCaptureAge::implementation::CharactherViewModel>();
+            charachterEntity.CharacterName(L"Character");
+            characterEntities.Append(charachterEntity);
+        }
     }
 }
