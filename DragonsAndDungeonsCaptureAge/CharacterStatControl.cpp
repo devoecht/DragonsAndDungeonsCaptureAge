@@ -9,13 +9,17 @@ using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
-    int32_t CharacterStatControl::MyProperty()
-    {
-        throw hresult_not_implemented();
-    }
+	int16_t CharacterStatControl::CharacterStatValue() const
+	{
+		return m_CharacterStatValue;
+	}
 
-    void CharacterStatControl::MyProperty(int32_t /* value */)
-    {
-        throw hresult_not_implemented();
-    }
+	void CharacterStatControl::CharacterStatValue(int16_t value)
+	{
+		if (m_CharacterStatValue != value)
+		{
+			m_CharacterStatValue = value;
+			m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"CharacterCHAStatValue" });
+		}
+	}
 }

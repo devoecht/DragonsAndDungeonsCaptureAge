@@ -4,6 +4,7 @@ namespace DragonsAndDungeonsCaptureAge
     runtimeclass CharacterStatControl : Windows.UI.Xaml.Controls.UserControl
     {
         CharacterStatControl();
-        Int32 MyProperty;
+
+        Int16 CharacterStatValue;
     }
 }

@@ -10,14 +10,23 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
     struct CharacterStatControl : CharacterStatControlT<CharacterStatControl>
     {
-        CharacterStatControl() 
-        {
-            // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
+        CharacterStatControl() {};
+
+        event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value) {
+            return m_propertyChanged.add(value);
         }
 
-        int32_t MyProperty();
-        void MyProperty(int32_t value);
+        void PropertyChanged(event_token const& token) {
+            m_propertyChanged.remove(token);
+        }
+
+        int16_t CharacterStatValue() const;
+        void CharacterStatValue(int16_t value);
+
+    private:
+        int16_t m_CharacterStatValue = 0;
+
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 

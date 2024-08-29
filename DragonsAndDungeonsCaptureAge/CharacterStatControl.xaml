@@ -10,7 +10,7 @@
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
         <Canvas Width="80" Height="80" Background="Darkgray" HorizontalAlignment="Left" Margin="20,40,0,0">
             <Canvas Width="40" Height="40" Background="white" HorizontalAlignment="Left" Margin="20,60,0,0">
-                <TextBlock Text="0" FontSize="35" Foreground="Black" TextAlignment="Center" Width="40" Height="40"/>
+                <TextBlock Text="{x:Bind CharacterStatValue}" FontSize="35" Foreground="Black" TextAlignment="Center" Width="40" Height="40"/>
             </Canvas>
         </Canvas>
     </StackPanel>
