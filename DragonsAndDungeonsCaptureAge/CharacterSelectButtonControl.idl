@@ -11,5 +11,7 @@ namespace DragonsAndDungeonsCaptureAge
         CharactherViewModel CharacterEntry;
 
         String CharacterName;
+
+        Windows.Foundation.Collections.IObservableVector<CharactherViewModel> CharacterEntities{ get; };
     }
 }

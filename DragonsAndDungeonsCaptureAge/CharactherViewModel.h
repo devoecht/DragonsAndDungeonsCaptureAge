@@ -38,7 +38,11 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
         int16_t CharacterCHAStatValue() const;
         void CharacterCHAStatValue(int16_t value);
 
+        bool IsCurrentSelectedCharacter() const;
+        void IsCurrentSelectedCharacter(bool value);
+
     private:
+        //General information
         winrt::hstring m_characterName = L"Default Name";
         CharacterRace m_characterRace = CharacterRace::Unknown;
         CharacterClass m_characterClass = CharacterClass::Unknown;
@@ -50,6 +54,8 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
         int16_t m_CharacterDEXStatValue = 0;
         int16_t m_CharacterCONStatValue = 0;
         int16_t m_CharacterCHAStatValue = 0;
+
+        bool m_isCurrentSelectedCharacter = false;
     };
 }
 

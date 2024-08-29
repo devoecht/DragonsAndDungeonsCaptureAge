@@ -136,4 +136,15 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 			m_CharacterCHAStatValue = value;
 		}
 	}
+	bool CharactherViewModel::IsCurrentSelectedCharacter() const
+	{
+		return m_isCurrentSelectedCharacter;
+	}
+	void CharactherViewModel::IsCurrentSelectedCharacter(bool value)
+	{
+		if (m_isCurrentSelectedCharacter != value)
+		{
+			m_isCurrentSelectedCharacter = value;
+		}
+	}
 }

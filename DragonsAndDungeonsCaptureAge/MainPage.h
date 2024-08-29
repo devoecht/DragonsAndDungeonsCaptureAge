@@ -16,8 +16,6 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 
     private:
         Windows::Foundation::Collections::IObservableVector<DragonsAndDungeonsCaptureAge::CharactherViewModel> m_characterEntities;
-
-       
     };
 }
 

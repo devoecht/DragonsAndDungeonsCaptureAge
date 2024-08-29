@@ -9,6 +9,11 @@ using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
+    CharacterSelectButtonControl::CharacterSelectButtonControl()
+    {
+        m_characterEntities = single_threaded_observable_vector<DragonsAndDungeonsCaptureAge::CharactherViewModel>();
+    }
+
     DragonsAndDungeonsCaptureAge::CharactherViewModel CharacterSelectButtonControl::CharacterEntry()
     {
         return m_characterEntry;
@@ -43,6 +48,6 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 
     void CharacterSelectButtonControl::ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        
+        m_characterEntry.IsCurrentSelectedCharacter(); //needs to be a settable value
     }
 }

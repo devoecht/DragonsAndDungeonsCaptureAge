@@ -12,7 +12,11 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
     struct CharacterSelectButtonControl : CharacterSelectButtonControlT<CharacterSelectButtonControl>
     {
-        CharacterSelectButtonControl(){}
+        CharacterSelectButtonControl();
+
+        Windows::Foundation::Collections::IObservableVector<DragonsAndDungeonsCaptureAge::CharactherViewModel> CharacterEntities() {
+            return m_characterEntities;
+        }
 
         event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value) {
             return m_propertyChanged.add(value);
@@ -35,6 +39,8 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
         winrt::hstring m_characterName = L"NotSet";
 
         event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+
+        Windows::Foundation::Collections::IObservableVector<DragonsAndDungeonsCaptureAge::CharactherViewModel> m_characterEntities;
     };
 }
 
