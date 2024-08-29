@@ -9,13 +9,30 @@ using namespace Windows::UI::Xaml;
 
 namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
-    int32_t CharacterInformationPanelControl::MyProperty()
+    Windows::UI::Xaml::DependencyProperty CharacterInformationPanelControl::m_characterNameProperty =
+        Windows::UI::Xaml::DependencyProperty::Register(
+            L"CharacterName",
+            winrt::xaml_typename<hstring>(),
+            winrt::xaml_typename<DragonsAndDungeonsCaptureAge::CharacterInformationPanelControl>(),
+            Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L""), Windows::UI::Xaml::PropertyChangedCallback{ &CharacterInformationPanelControl::OnCurrentCharacterNameChanged } }
+        );
+
+    winrt::hstring CharacterInformationPanelControl::CharacterName()
     {
-        throw hresult_not_implemented();
+        return m_characterName;
+    }
+    void CharacterInformationPanelControl::CharacterName(winrt::hstring const& value)
+    {
+        if (m_characterName != value)
+        {
+            m_characterName = value;
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"CharacterName" });
+        }
     }
 
-    void CharacterInformationPanelControl::MyProperty(int32_t /* value */)
+    void CharacterInformationPanelControl::OnCurrentCharacterNameChanged(Windows::UI::Xaml::DependencyObject d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs e)
     {
-        throw hresult_not_implemented();
+        auto parent = d.as<DragonsAndDungeonsCaptureAge::CharacterInformationPanelControl>();
+        parent.CharacterName(parent.CharacterName());
     }
 }

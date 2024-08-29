@@ -3,7 +3,7 @@ import "CharactherViewModel.idl";
 namespace DragonsAndDungeonsCaptureAge
 
 {   
-[bindable]
+    [bindable]
     [default_interface]
     runtimeclass CharachterSelectionPanelControl : Windows.UI.Xaml.Controls.UserControl, Windows.UI.Xaml.Data.INotifyPropertyChanged
     {

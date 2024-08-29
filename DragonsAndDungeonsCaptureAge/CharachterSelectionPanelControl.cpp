@@ -5,6 +5,7 @@
 #endif
 
 #include <CharactherViewModel.h>
+#include <CharacterInformationPanelControl.h>
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;

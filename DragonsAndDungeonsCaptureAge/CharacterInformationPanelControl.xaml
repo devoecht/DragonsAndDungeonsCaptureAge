@@ -9,6 +9,7 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="477" Height="800" Background="LightGray">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="800" Background="LightGray">
+            <TextBlock Text="{x:Bind CharacterName}" FontSize="35" Foreground="DarkGray" TextAlignment="Left" Width="750" Height="80"/>
             <local:CharacterStatControl/>
             <local:CharacterStatControl/>
             <local:CharacterStatControl/>

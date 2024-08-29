@@ -10,14 +10,30 @@ namespace winrt::DragonsAndDungeonsCaptureAge::implementation
 {
     struct CharacterInformationPanelControl : CharacterInformationPanelControlT<CharacterInformationPanelControl>
     {
-        CharacterInformationPanelControl() 
-        {
-            // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
+        CharacterInformationPanelControl() {}
+
+        event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value) {
+            return m_propertyChanged.add(value);
         }
 
-        int32_t MyProperty();
-        void MyProperty(int32_t value);
+        void PropertyChanged(event_token const& token) {
+            m_propertyChanged.remove(token);
+        }
+
+        static Windows::UI::Xaml::DependencyProperty CharacterNameProperty() {
+            return m_characterNameProperty;
+        }
+
+        static void OnCurrentCharacterNameChanged(Windows::UI::Xaml::DependencyObject d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs e);
+
+        winrt::hstring CharacterName();
+        void CharacterName(winrt::hstring const& value);
+
+    private:
+        static Windows::UI::Xaml::DependencyProperty m_characterNameProperty;
+        winrt::hstring m_characterName = L"UnSet";
+
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 
