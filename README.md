@@ -30,7 +30,7 @@ I would like to thank you again for your time and to give me this opportunity.
 
 Timesheet:
 
-| Start-Time   | End-Time       | Changelist |
+| Start-Time   | End-Time       |  Changelist   |
 |:-------------|:--------------:|--------------:|
 | 08:35        | 11:02          | 1  Working on CharacterInformationPanelControl -> still stuck with getting communication working		      |
 | 11:02        | 11:15          | 2  Trying to set the communication between the button click and to display the information on the panel -> This was not a success but kept the code, I had to remove a lot of things I was trying      |
